@@ -16,8 +16,10 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get -y install python3 python-docutils ruby-dev
+          sudo apt-get -y install python3 ruby-dev
           sudo gem install fpm
+          python3 -m pip install --upgrade pip
+          python3 -m pip install docutils
       - name: Build
         run: make PYTHON=python3 all deb
       - name: Archive package artifacts
