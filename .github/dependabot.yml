@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "semiannually"
+    labels:
+      - "tech-debt"
+    groups:
+      compatible:
+        update-types:
+          - "minor"
+          - "patch"
+      artifacts:
+        patterns:
+          - "actions/*-artifact"
